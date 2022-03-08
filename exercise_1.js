@@ -1,8 +1,10 @@
 const LIMIT = 9;
 
 function encodeString(str){
-    
     console.log(str);
+    if ( str == null || str == undefined || typeof str !== 'string' ){
+        return new Error('invalid data.');
+    }
 
     let counter = 1;
     let strAux = str[0];
@@ -25,3 +27,5 @@ function encodeString(str){
 console.log(encodeString('AAAAAAAAAAAAABBCCCCDD'));
 console.log(encodeString('aA'));
 console.log(encodeString('122333'));
+console.log(encodeString(null));
+console.log(encodeString(-111));
